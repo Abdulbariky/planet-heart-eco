@@ -3,11 +3,10 @@ import { motion } from 'framer-motion';
 import { Handshake } from 'lucide-react';
 
 const Partners = () => {
-  // Replace with your actual partner names and logo paths
   const partners = [
     {
-      name: 'Berbera municipality',
-      logo: '/images/partners/Berbera-municipality.jpeg', // Replace with actual logo path
+      name: 'Berbera Municipality',
+      logo: '/images/partners/Berbera-municipality.jpeg',
       type: 'Foundation Partner',
     },
     {
@@ -16,17 +15,19 @@ const Partners = () => {
       type: 'Technology Partner',
     },
     {
-      name: 'Flybox bio limited',
+      name: 'Flybox Bio Limited',
       logo: '/images/partners/Flybox-bio-limited.jpeg',
       type: 'Government Partner',
     },
     {
-      name: 'Somaliland ministry of agriculture',
+      name: 'Somaliland Ministry of Agriculture',
       logo: '/images/partners/Somaliland-ministry-of-agriculture.jpeg',
       type: 'Impact Investor',
     },
-    
   ];
+
+  // Duplicate many times for seamless infinite scroll
+  const duplicatedPartners = [...partners, ...partners, ...partners, ...partners, ...partners];
 
   const partnerTypes = [
     'Foundations & Donors',
@@ -73,48 +74,110 @@ const Partners = () => {
           </p>
         </motion.div>
 
-        {/* Partner Logos Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-16">
-          {partners.map((partner, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -8, scale: 1.05 }}
-              className="group"
-            >
-              <div className="flex flex-col items-center p-6 glass rounded-2xl hover:shadow-xl transition-all duration-300">
-                {/* Logo */}
-                <div className="w-16 h-16 mb-3 flex items-center justify-center">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
-                    onError={(e) => {
-                      // Fallback if logo not found - shows first letter
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
-                    }}
-                  />
-                  {/* Fallback placeholder */}
-                  <div
-                    className="hidden w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-ocean-500 items-center justify-center text-white text-2xl font-bold"
-                  >
-                    {partner.name.charAt(0)}
-                  </div>
-                </div>
+        {/* ================================ */}
+        {/* ROW 1 — Scrolls Left → Right     */}
+        {/* ================================ */}
+        <div className="relative mb-6 overflow-hidden">
+          {/* Left fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white dark:from-gray-950 to-transparent z-10 pointer-events-none" />
+          {/* Right fade */}
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white dark:from-gray-950 to-transparent z-10 pointer-events-none" />
 
-                <p className="text-xs font-semibold text-center text-gray-900 dark:text-white leading-tight">
-                  {partner.name}
-                </p>
-                <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-1">
-                  {partner.type}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+          <motion.div
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{
+              duration: 18,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+            className="flex gap-6 w-max"
+          >
+            {duplicatedPartners.map((partner, index) => (
+              <motion.div
+                key={`row1-${index}`}
+                whileHover={{ scale: 1.08, y: -6 }}
+                className="flex-shrink-0 group cursor-pointer"
+              >
+                <div className="flex flex-col items-center justify-center w-48 p-6 glass rounded-2xl hover:shadow-2xl transition-all duration-300">
+                  {/* Logo */}
+                  <div className="w-16 h-16 mb-3 flex items-center justify-center">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    {/* Fallback */}
+                    <div className="hidden w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-ocean-500 items-center justify-center text-white text-2xl font-bold">
+                      {partner.name.charAt(0)}
+                    </div>
+                  </div>
+                  <p className="text-xs font-bold text-center text-gray-900 dark:text-white leading-tight">
+                    {partner.name}
+                  </p>
+                  <p className="text-xs text-center text-primary-600 dark:text-primary-400 mt-1">
+                    {partner.type}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* ================================ */}
+        {/* ROW 2 — Scrolls Right → Left     */}
+        {/* ================================ */}
+        <div className="relative mb-16 overflow-hidden">
+          {/* Left fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white dark:from-gray-950 to-transparent z-10 pointer-events-none" />
+          {/* Right fade */}
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white dark:from-gray-950 to-transparent z-10 pointer-events-none" />
+
+          <motion.div
+            animate={{ x: ['-50%', '0%'] }}
+            transition={{
+              duration: 22,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+            className="flex gap-6 w-max"
+          >
+            {duplicatedPartners.map((partner, index) => (
+              <motion.div
+                key={`row2-${index}`}
+                whileHover={{ scale: 1.08, y: -6 }}
+                className="flex-shrink-0 group cursor-pointer"
+              >
+                <div className="flex flex-col items-center justify-center w-48 p-6 glass rounded-2xl hover:shadow-2xl transition-all duration-300">
+                  {/* Logo */}
+                  <div className="w-16 h-16 mb-3 flex items-center justify-center">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    {/* Fallback */}
+                    <div className="hidden w-16 h-16 rounded-xl bg-gradient-to-br from-ocean-500 to-primary-500 items-center justify-center text-white text-2xl font-bold">
+                      {partner.name.charAt(0)}
+                    </div>
+                  </div>
+                  <p className="text-xs font-bold text-center text-gray-900 dark:text-white leading-tight">
+                    {partner.name}
+                  </p>
+                  <p className="text-xs text-center text-ocean-600 dark:text-ocean-400 mt-1">
+                    {partner.type}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
 
         {/* Partner Types */}
@@ -136,7 +199,8 @@ const Partners = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 + index * 0.1 }}
-                className="flex items-center gap-3 p-4 rounded-xl bg-primary-50/50 dark:bg-primary-950/20"
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center gap-3 p-4 rounded-xl bg-primary-50/50 dark:bg-primary-950/20 hover:bg-primary-100/50 dark:hover:bg-primary-900/30 transition-colors"
               >
                 <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary-500 to-ocean-500 flex-shrink-0" />
                 <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -145,12 +209,7 @@ const Partners = () => {
               </motion.div>
             ))}
           </div>
-          <p className="text-center text-gray-600 dark:text-gray-400 mt-6">
-            Interested in partnering with us?{' '}
-            <a href="#contact" className="text-primary-600 dark:text-primary-400 font-semibold hover:underline">
-              Get in touch →
-            </a>
-          </p>
+         
         </motion.div>
       </div>
     </section>
