@@ -6,34 +6,28 @@ const Team = () => {
   // Replace with your actual team member details and image paths
   const teamMembers = [
     {
-      name: 'HAMZA GULEID',
+      name: 'HAMZA HUSSEIN',
       role: 'Founder & CEO',
       image: '/images/team/member1.jpg', // Update with actual path
-      bio: 'Leading climate-smart agriculture innovation in the Horn of Africa',
-    },
-    {
-      name: 'Leyla',
-      role: 'Founder',
-      image: '/images/team/member2.jpg',
-      bio: 'Visionary founder of Planet Heart Eco, building bold circular-economy solutions that turn waste into opportunity.',
+      bio: 'Hamza provides executive leadership and overall direction for Planet Heart Eco. He leads strategic growth, corporate governance, high level Internal and External partnerships, guiding the company’s expansion and long-term sustainability.',
     },
     {
       name: 'Mohamud Mohamed',
-      role: 'Head of Operations',
-      image: '/images/team/member3.jpg',
-      bio: 'Execution powerhouse leading daily operations, systems performance, and real-world impact on the ground.',
+      role: 'Chief Operating Officer (COO)',
+      image: '/images/team/mudu.jpeg',
+      bio: 'Mohamud drives operational excellence, innovation pathways, and systems development. He oversees execution, performance, and the development of scalable circular-economy solutions, ensuring reliability and measurable impact.',
     },
     {
       name: 'Shukri Farah',
-      role: 'Research & Development',
+      role: ' Research & Development',
       image: '/images/team/member4.jpg',
-      bio: 'Innovation-focused researcher driving smarter processes, continuous improvement, and technical excellence.',
+      bio: 'Shukri leads research, process optimization, and continuous improvement initiatives. Her work strengthens technical efficiency, system performance, and innovation capacity.',
     },
     {
       name: 'Mariam Mohamed Haybe',
       role: 'Administrator',
       image: '/images/team/member4.jpg',
-      bio: 'Operational backbone ensuring coordination, structure, and organizational flow across the team.',
+      bio: 'Mariam manages administrative coordination, organizational systems, and operational support. She ensures structured workflows, documentation integrity, and internal efficiency.',
     },
   ];
 

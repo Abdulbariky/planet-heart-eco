@@ -67,8 +67,8 @@ const Timeline = () => {
           </h2>
 
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-balance">
-            This timeline outlines the key milestones in our proposed partnership with Telesom 
-            Foundation, emphasizing our strategy to enhance sustainability and resilience in Somaliland.
+            This timeline outlines the key milestones in our proposed partnership with Somaliland Institute Of Agricultural Research Institute S.I.A.R 
+            emphasizing our strategy to enhance sustainability and resilience in Somaliland.
           </p>
         </motion.div>
 
