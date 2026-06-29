@@ -6,30 +6,30 @@ const About = () => {
   const features = [
     {
       icon: Target,
-      title: 'Vision',
+      title: 'Our Mission',
       description:
-        'A Horn of Africa where food systems are locally supplied, climate-resilient, and circular—where waste drives agricultural productivity.',
+        'To turn Somaliland\'s organic waste into useful products that support cleaner cities, healthier soils, sustainable animal feed, and food security — across the whole country.',
       color: 'primary',
     },
     {
       icon: Leaf,
-      title: 'Mission',
+      title: 'Our Vision',
       description:
-        'Build a scalable circular economy platform converting organic waste into high-value agricultural inputs while delivering strong returns.',
+        'To become the leading waste-to-value company in the Horn of Africa and demonstrate that circular economy solutions can work locally, practically, and at national scale.',
       color: 'ocean',
     },
     {
-      icon: TrendingUp,
-      title: 'The Problem',
+      icon: Users,
+      title: 'Our Partnership',
       description:
-        'Agriculture depends on imported fertilizers, livestock faces protein feed bottlenecks, and 40–70+ tons of daily organic waste has no productive use.',
+        'Planet Heart ECO LIMITED operates in official partnership with the Berbera Municipality Authority — our first municipal partnership and the foundation of our national expansion model. Berbera is our operational base, but our vision and our market are Somaliland-wide.',
       color: 'primary',
     },
     {
-      icon: Users,
-      title: 'Our Solution',
+      icon: TrendingUp,
+      title: 'Practical Environmental Action',
       description:
-        'Black Soldier Fly bioconversion transforms waste into BSF Frass (organic fertilizer) and BSF Protein Meal (high-protein livestock feed).',
+        'Environmental work must also make economic sense. Our model does both. By using Black Soldier Fly larvae to recycle organic waste, we reduce the burden on waste disposal systems while producing fertilizer and animal feed ingredients that local farmers and producers need.',
       color: 'ocean',
     },
   ];
@@ -72,23 +72,23 @@ const About = () => {
           >
             <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              Building Resilient Food Systems
+              About Planet Heart ECO LIMITED
             </span>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-gray-900 dark:text-white">
-              Circular Economy
+              Somaliland's First.
             </span>
             <br />
             <span className="bg-gradient-to-r from-primary-600 to-ocean-600 dark:from-primary-400 dark:to-ocean-400 bg-clip-text text-transparent">
-              Through Innovation
+              The Region's Next.
             </span>
           </h2>
 
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-balance">
-            We strengthen food security, reduce import dependency, and cut emissions—while creating
-            scalable economic value for communities in the Horn of Africa.
+            Planet Heart ECO LIMITED is headquartered in Berbera, Somaliland. We are the first company in Somaliland and the Horn of Africa to operate Black Soldier Fly organic waste recycling at commercial scale — and we are built to serve the whole of Somaliland.
+            We believe organic waste is one of the most underused resources in Somaliland. Our work is to turn that waste into products that support farming, animal feed, and cleaner cities from Berbera to Hargeisa, Borama to Burao, and beyond.
           </p>
         </motion.div>
 
@@ -146,20 +146,16 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Why Change Is Needed
+                Built for National Impact
               </h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-                In Berbera, approximately{' '}
+                We believe organic waste is one of the most underused resources in Somaliland. Our work is to turn that waste into products that support farming, animal feed, and cleaner cities from{' '}
                 <span className="font-bold text-primary-600 dark:text-primary-400">
-                  40 to 70 tons of organic waste
-                </span>{' '}
-                are generated daily with no productive use. Meanwhile, agriculture depends on
-                expensive imported fertilizers and livestock producers face critical protein feed
-                shortages.
+                  Berbera to Hargeisa, Borama to Burao, and beyond.
+                </span>
               </p>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                This creates high costs, low productivity, environmental damage, and massive missed
-                economic value.
+                This partnership connects municipal waste services, local agriculture, private sector growth, and environmental protection. We are actively building towards partnerships with municipalities and agricultural stakeholders in every region of the country.
               </p>
             </div>
 
@@ -174,7 +170,7 @@ const About = () => {
                     Waste → Value
                   </div>
                   <div className="text-lg font-medium text-gray-700 dark:text-gray-300">
-                    Circular by Design
+                    National Scale
                   </div>
                 </div>
               </motion.div>

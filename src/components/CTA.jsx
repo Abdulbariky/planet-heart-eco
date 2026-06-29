@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Heart } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Globe } from 'lucide-react';
 
 const CTA = () => {
   const contactInfo = [
@@ -14,7 +14,7 @@ const CTA = () => {
       icon: Phone,
       label: 'Phone',
       value: '+252 63 9213892',
-      href: 'tel:+252 63 9213892',
+      href: 'tel:+252639213892',
     },
     {
       icon: Mail,
@@ -25,9 +25,34 @@ const CTA = () => {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Berbera,Somaliland',
+      value: 'Berbera, Somaliland',
       href: '#',
     },
+  ];
+
+  const collaborators = [
+    'Municipalities across Somaliland that need practical organic waste solutions',
+    'Farmers and agribusinesses looking for reliable organic fertilizer',
+    'Feed producers looking for local protein ingredients',
+    'Investors interested in scalable circular economy projects',
+    'NGOs and development partners working on food security, climate, and livelihoods across the country',
+    'Research institutions supporting testing, trials, and innovation',
+    'Companies looking for strong environmental and social impact partnerships',
+  ];
+
+  const whyWorkWithUs = [
+    'We are the first and only commercial BSF recycling company in Somaliland and the Horn of Africa',
+    'We operate in official partnership with the Berbera Municipality Authority, with national expansion underway',
+    'Our model is practical, proven, and built to scale across Somaliland',
+    'Our team understands Somaliland\'s local market, agri-environment, and operating realities',
+    'We connect waste management, agriculture, animal feed, and climate action in one integrated national system',
+  ];
+
+  const ctaButtons = [
+    { label: 'Contact Us', href: 'mailto:info@planethearteco.com', primary: true },
+    { label: 'Become a Partner', href: 'mailto:info@planethearteco.com', primary: false },
+    { label: 'Request Product Info', href: 'mailto:info@planethearteco.com', primary: false },
+    { label: 'Explore Investment', href: 'mailto:info@planethearteco.com', primary: false },
   ];
 
   return (
@@ -53,7 +78,7 @@ const CTA = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Column - CTA Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -69,9 +94,9 @@ const CTA = () => {
               transition={{ delay: 0.2 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm mb-6"
             >
-              <Heart className="w-4 h-4 fill-white" />
+              <Globe className="w-4 h-4" />
               <span className="text-sm font-medium">
-                Join the Movement
+                Partner With Us
               </span>
             </motion.div>
 
@@ -80,11 +105,11 @@ const CTA = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              className="text-4xl md:text-5xl font-bold mb-6"
             >
-              Join Us for
+              Build the Circular Economy
               <br />
-              Impact
+              Across Somaliland
             </motion.h2>
 
             <motion.p
@@ -92,19 +117,111 @@ const CTA = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-xl text-white/90 mb-8 max-w-xl"
+              className="text-lg text-white/90 mb-8 max-w-xl"
             >
-              Partner with Planet Heart Eco Ltd to create sustainable climate solutions 
-              that make a real difference in Somaliland and beyond.
+              Planet Heart ECO LIMITED is looking for partners who want to help solve real problems in waste management, food security, agriculture, animal feed, and climate resilience — at national scale.
             </motion.p>
+
+            {/* We welcome collaboration with */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="mb-8"
+            >
+              <h3 className="text-lg font-bold text-white mb-4">We welcome collaboration with:</h3>
+              <ul className="space-y-2">
+                {collaborators.map((item, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -15 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.55 + index * 0.07 }}
+                    className="flex items-start gap-3 text-white/85 text-sm"
+                  >
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/70 mt-1.5 flex-shrink-0" />
+                    {item}
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Why Work With Us */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              className="mb-8 p-6 rounded-2xl bg-white/10 backdrop-blur-sm"
+            >
+              <h3 className="text-lg font-bold text-white mb-4">Why Work With Us?</h3>
+              <ul className="space-y-2">
+                {whyWorkWithUs.map((item, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -15 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.65 + index * 0.07 }}
+                    className="flex items-start gap-3 text-white/85 text-sm"
+                  >
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/70 mt-1.5 flex-shrink-0" />
+                    {item}
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Closing Block */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.7 }}
+              className="mb-8 border-l-4 border-white/40 pl-4"
+            >
+              <p className="text-white/90 text-sm leading-relaxed">
+                The future of waste in Somaliland is circular.<br />
+                The future of farming is healthier soil.<br />
+                The future of animal feed is local.<br />
+                <span className="font-semibold text-white mt-2 block">Planet Heart ECO LIMITED is already building that future — across all of Somaliland. Come build it with us.</span>
+              </p>
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.75 }}
+              className="flex flex-wrap gap-3"
+            >
+              {ctaButtons.map((btn, index) => (
+                <motion.a
+                  key={index}
+                  href={btn.href}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`px-5 py-3 rounded-xl text-sm font-semibold transition-all ${
+                    btn.primary
+                      ? 'bg-white text-primary-700 hover:bg-gray-100 shadow-lg'
+                      : 'bg-white/15 text-white hover:bg-white/25 backdrop-blur-sm border border-white/30'
+                  }`}
+                >
+                  {btn.label}
+                </motion.a>
+              ))}
+            </motion.div>
 
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="space-y-4"
+              transition={{ delay: 0.8 }}
+              className="mt-8 space-y-3"
             >
               {contactInfo.map((info, index) => (
                 <motion.a
@@ -113,18 +230,18 @@ const CTA = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.6 + index * 0.1 }}
+                  transition={{ delay: 0.85 + index * 0.08 }}
                   whileHover={{ x: 8 }}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all group"
+                  className="flex items-center gap-4 p-3 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <info.icon className="w-6 h-6" />
+                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <info.icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-white/70">
+                    <div className="text-xs font-medium text-white/70">
                       {info.label}
                     </div>
-                    <div className="text-lg font-semibold">
+                    <div className="text-sm font-semibold">
                       {info.value}
                     </div>
                   </div>
@@ -217,25 +334,13 @@ const CTA = () => {
 
             {/* Floating Elements */}
             <motion.div
-              animate={{
-                y: [0, -20, 0],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               className="absolute -top-6 -right-6 w-24 h-24 bg-white/20 rounded-full blur-2xl"
             />
             <motion.div
-              animate={{
-                y: [0, 20, 0],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
+              animate={{ y: [0, 20, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
               className="absolute -bottom-6 -left-6 w-32 h-32 bg-white/20 rounded-full blur-2xl"
             />
           </motion.div>

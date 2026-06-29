@@ -6,21 +6,21 @@ const Team = () => {
   // Replace with your actual team member details and image paths
   const teamMembers = [
     {
-      name: 'HAMZA HUSSEIN',
+      name: 'Mohamud Mohamed',
       role: 'Founder & CEO',
-      image: '/images/team/member1.jpg', // Update with actual path
+      image:'/images/team/mudi.jpeg',
       bio: 'Hamza provides executive leadership and overall direction for Planet Heart Eco. He leads strategic growth, corporate governance, high level Internal and External partnerships, guiding the company’s expansion and long-term sustainability.',
     },
     {
-      name: 'Mohamud Mohamed',
-      role: 'Chief Operating Officer (COO)',
-      image: '/images/team/mudu.jpeg',
+      name: 'Hamza Hussein',
+      role: 'Chief strategy Officer (CSO)',
+      image:'/images/team/member1.jpg',
       bio: 'Mohamud drives operational excellence, innovation pathways, and systems development. He oversees execution, performance, and the development of scalable circular-economy solutions, ensuring reliability and measurable impact.',
     },
     {
       name: 'Shukri Farah',
       role: ' Research & Development',
-      image: '/images/team/member4.jpg',
+      image: '/images/team/SHUKRI.jpeg',
       bio: 'Shukri leads research, process optimization, and continuous improvement initiatives. Her work strengthens technical efficiency, system performance, and innovation capacity.',
     },
     {

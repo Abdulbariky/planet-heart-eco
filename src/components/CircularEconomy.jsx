@@ -1,41 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Recycle, Wheat, Fish, CloudRain } from 'lucide-react';
+import { Recycle, Leaf, Fish, Users } from 'lucide-react';
 
 const CircularEconomy = () => {
-  const steps = [
+  const products = [
     {
-      icon: Recycle,
-      title: 'Waste Conversion',
-      subtitle: 'Organic materials',
-      points: ['Organic materials', 'Methane reduction', 'Local resources'],
+      icon: Leaf,
+      title: 'BSF Frass Fertilizer',
+      description: 'A natural organic fertilizer that helps improve soil health and crop production.',
       color: 'from-primary-500 to-primary-600',
       delay: 0,
     },
     {
       icon: Fish,
-      title: 'Protein Production',
-      subtitle: 'Sustainable feed',
-      points: ['Sustainable feed', 'Nutrient-dense', 'Low environmental impact'],
+      title: 'BSF Larvae Protein',
+      description: 'A local protein source for animal feed — produced from Somaliland\'s own organic waste.',
       color: 'from-ocean-500 to-ocean-600',
       delay: 0.2,
     },
-    {
-      icon: Wheat,
-      title: 'Fertilizer Creation',
-      subtitle: 'Enhanced soil health',
-      points: ['Enhanced soil health', 'Reduced chemical use', 'Crop yield improvement'],
-      color: 'from-primary-500 to-primary-600',
-      delay: 0.4,
-    },
-    {
-      icon: CloudRain,
-      title: 'Emissions Reduction',
-      subtitle: 'Lower carbon footprint',
-      points: ['Lower carbon footprint', 'Climate resilience', 'Sustainable practices'],
-      color: 'from-ocean-500 to-ocean-600',
-      delay: 0.6,
-    },
+  ];
+
+  const beneficiaries = [
+    'Municipalities across Somaliland that need cleaner waste systems',
+    'Farmers looking for reliable organic fertilizer suited to local soils',
+    'Feed producers seeking a local protein source',
+    'Development partners working on food security and climate resilience',
   ];
 
   return (
@@ -64,99 +53,92 @@ const CircularEconomy = () => {
             </span>
           </motion.div>
 
-          {/* UPDATED TITLE */}
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-gray-900 dark:text-white">
-              BSF Bioconversion
+              One simple system.
             </span>
             <br />
             <span className="bg-gradient-to-r from-primary-600 to-ocean-600 dark:from-primary-400 dark:to-ocean-400 bg-clip-text text-transparent">
-              Technology
+              Two useful products. Real impact.
             </span>
           </h2>
 
-          {/* UPDATED DESCRIPTION */}
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-balance">
-            Using Black Soldier Fly bioconversion, we transform organic waste into BSF Frass
-            (climate-smart organic fertilizer) and BSF Protein Meal (high-protein feed for livestock and poultry).
+            Across Somaliland, organic waste is often seen as a problem. We see it as a resource. Our Black Soldier Fly recycling process turns organic waste into:
           </p>
         </motion.div>
 
-        {/* Process Flow */}
-        <div className="relative">
-          {/* Connection Lines - Desktop */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-300 via-ocean-300 to-primary-300 dark:from-primary-700 dark:via-ocean-700 dark:to-primary-700 -translate-y-1/2" />
+        {/* Product Cards */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-3xl mx-auto">
+          {products.map((product, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: product.delay, duration: 0.6 }}
+              whileHover={{ y: -8 }}
+              className="relative"
+            >
+              <div className="h-full p-6 glass rounded-2xl hover:shadow-xl transition-all duration-300">
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                  className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${product.color} flex items-center justify-center mb-4 shadow-lg`}
+                >
+                  <product.icon className="w-8 h-8 text-white" strokeWidth={2} />
+                </motion.div>
 
-          {/* Steps Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: step.delay, duration: 0.6 }}
-                whileHover={{ y: -8 }}
-                className="relative"
-              >
-                <div className="h-full p-6 glass rounded-2xl hover:shadow-xl transition-all duration-300">
-                  <div className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-gradient-to-br from-white to-gray-100 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center font-bold text-lg shadow-lg border-2 border-primary-200 dark:border-primary-800">
-                    {index + 1}
-                  </div>
-
-                  <motion.div
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center mb-4 shadow-lg`}
-                  >
-                    <step.icon className="w-8 h-8 text-white" strokeWidth={2} />
-                  </motion.div>
-
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm font-medium text-primary-600 dark:text-primary-400 mb-4">
-                    {step.subtitle}
-                  </p>
-
-                  <ul className="space-y-2">
-                    {step.points.map((point, pointIndex) => (
-                      <motion.li
-                        key={pointIndex}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: step.delay + 0.1 * pointIndex }}
-                        className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400"
-                      >
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary-500 dark:bg-primary-400 mt-1.5" />
-                        <span>{point}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  {product.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                  {product.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Bottom Description */}
+        {/* Beneficiaries Block */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="mt-16 p-8 glass rounded-3xl text-center"
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="p-8 glass rounded-3xl"
         >
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Comprehensive Circular Approach
-          </h3>
-          <p className="text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
-            By converting waste into high-protein animal feed and organic fertilizers, we not only
-            address the pressing issue of waste management but also enhance food security and support
-            sustainable agricultural practices. This closed-loop system reduces greenhouse gas emissions
-            and reliance on imports, fostering a greener economy.
-          </p>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-ocean-600 flex items-center justify-center shadow-lg">
+                  <Users className="w-6 h-6 text-white" strokeWidth={2} />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  Who It Serves
+                </h3>
+              </div>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                This gives municipalities, farmers, feed producers, and development partners across Somaliland a practical way to create cleaner cities, stronger farms, and more reliable local supply chains.
+              </p>
+            </div>
+
+            <ul className="space-y-3">
+              {beneficiaries.map((item, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
+                  className="flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors"
+                >
+                  <div className="w-2 h-2 rounded-full bg-primary-500 dark:bg-primary-400 mt-2 flex-shrink-0" />
+                  <span className="text-gray-700 dark:text-gray-300 text-sm">{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
       </div>
     </section>

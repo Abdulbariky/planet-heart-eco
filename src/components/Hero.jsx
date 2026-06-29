@@ -45,7 +45,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -72,32 +72,38 @@ const Hero = () => {
                 transition={{ delay: 0.3 }}
                 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
               >
-                <span className="bg-gradient-to-r from-primary-600 to-ocean-600 dark:from-primary-400 dark:to-ocean-400 bg-clip-text text-transparent">
-                  Transform Waste
+                <span className="text-gray-900 dark:text-white">
+                  Somaliland's waste
                 </span>
                 <br />
-                <span className="text-gray-900 dark:text-white">
-                  Into Value
+                <span className="bg-gradient-to-r from-primary-600 to-ocean-600 dark:from-primary-400 dark:to-ocean-400 bg-clip-text text-transparent">
+                  can become something useful.
                 </span>
               </motion.h1>
 
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl"
+                className="space-y-4"
               >
-                Turning organic waste into sustainable resources. Creating a circular economy
-                that promotes climate resilience, reduces emissions, and builds green livelihoods
-                in Somaliland.
-              </motion.p>
+                <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl">
+                  Planet Heart ECO LIMITED is Somaliland's first commercial organic waste recycling company. We turn food waste, market waste, and fish waste into organic frass fertilizer and animal feed protein using Black Soldier Fly technology.
+                </p>
+                <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl">
+                  Starting in Berbera — in official partnership with the Berbera Municipality Authority — we are building a practical waste-to-value model for the whole of Somaliland and the wider Horn of Africa.
+                </p>
+                <p className="text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-200 max-w-2xl">
+                  Waste is not the end. It is the start of something valuable.
+                </p>
+              </motion.div>
             </div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 flex-wrap"
             >
               <motion.a
                 href="#contact"
@@ -110,45 +116,22 @@ const Hero = () => {
               </motion.a>
 
               <motion.a
-                href="#about"
+                href="#products"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 glass hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all"
               >
-                Learn More
+                Explore Our Solutions
               </motion.a>
-            </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="grid grid-cols-3 gap-6 pt-8"
-            >
-              {[
-                { value: '~66%', label: 'Gross', unit: 'Margin' },
-                { value: '3.6t', label: 'Break-even', unit: 'Daily' },
-                { value: 'BSF', label: 'Bioconversion', unit: 'Tech' },
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.7 + index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary-600 to-ocean-600 dark:from-primary-400 dark:to-ocean-400 bg-clip-text text-transparent">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                    {stat.label}
-                  </div>
-                  <div className="text-xs text-gray-500 dark:text-gray-500">
-                    {stat.unit}
-                  </div>
-                </motion.div>
-              ))}
+              <motion.a
+                href="#impact"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 glass hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all"
+              >
+                Learn About Our Impact
+              </motion.a>
             </motion.div>
           </motion.div>
 
@@ -186,7 +169,7 @@ const Hero = () => {
                 >
                   <img
                     src="/images/logo.png"
-                    alt="Planet Heart Eco Ltd"
+                    alt="Planet Heart ECO LIMITED"
                     className="w-48 h-48 object-contain drop-shadow-2xl"
                   />
 
