@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Rocket, Users, BarChart3, TrendingUp } from 'lucide-react';
+import { Rocket, Users, BarChart3, TrendingUp, CheckCircle } from 'lucide-react';
 
 const Timeline = () => {
   const milestones = [
     {
       icon: Rocket,
       title: 'Pilot Launch',
-      description: 'Launch pilot program in Berbera area.',
+      description: 'Successfully launched pilot program in Berbera area (11 January 2026 – 10 May 2026).',
       color: 'primary',
+      completed: true,
     },
     {
       icon: Users,
@@ -102,7 +103,7 @@ const Timeline = () => {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2 + 0.3, type: 'spring' }}
-                  className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white dark:bg-gray-900 border-4 border-primary-500 dark:border-primary-400 shadow-lg z-10"
+                  className={`absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white dark:bg-gray-900 border-4 shadow-lg z-10 ${milestone.completed ? 'border-green-500 dark:border-green-400' : 'border-primary-500 dark:border-primary-400'}`}
                 />
 
                 {/* Card */}
@@ -127,9 +128,19 @@ const Timeline = () => {
                     {milestone.description}
                   </p>
 
+                  {/* Completed Badge */}
+                  {milestone.completed && (
+                    <div className="mt-3 flex items-center justify-center gap-1.5">
+                      <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400" />
+                      <span className="text-xs font-semibold text-green-600 dark:text-green-400 uppercase tracking-wide">
+                        Completed
+                      </span>
+                    </div>
+                  )}
+
                   {/* Step Number */}
                   <div className="mt-4 text-center">
-                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 font-bold text-sm">
+                    <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-bold text-sm ${milestone.completed ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' : 'bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400'}`}>
                       {index + 1}
                     </span>
                   </div>
@@ -171,13 +182,21 @@ const Timeline = () => {
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                       {milestone.title}
                     </h3>
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 font-bold text-sm flex items-center justify-center">
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full font-bold text-sm flex items-center justify-center ${milestone.completed ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' : 'bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400'}`}>
                       {index + 1}
                     </span>
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
                     {milestone.description}
                   </p>
+                  {milestone.completed && (
+                    <div className="mt-3 flex items-center gap-1.5">
+                      <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400" />
+                      <span className="text-xs font-semibold text-green-600 dark:text-green-400 uppercase tracking-wide">
+                        Completed
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>

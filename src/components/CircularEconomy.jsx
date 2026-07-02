@@ -1,25 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Recycle, Leaf, Fish, Users } from 'lucide-react';
+import { Recycle, Users } from 'lucide-react';
 
 const CircularEconomy = () => {
-  const products = [
-    {
-      icon: Leaf,
-      title: 'BSF Frass Fertilizer',
-      description: 'A natural organic fertilizer that helps improve soil health and crop production.',
-      color: 'from-primary-500 to-primary-600',
-      delay: 0,
-    },
-    {
-      icon: Fish,
-      title: 'BSF Larvae Protein',
-      description: 'A local protein source for animal feed — produced from Somaliland\'s own organic waste.',
-      color: 'from-ocean-500 to-ocean-600',
-      delay: 0.2,
-    },
-  ];
-
   const beneficiaries = [
     'Municipalities across Somaliland that need cleaner waste systems',
     'Farmers looking for reliable organic fertilizer suited to local soils',
@@ -64,41 +47,9 @@ const CircularEconomy = () => {
           </h2>
 
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-balance">
-            Across Somaliland, organic waste is often seen as a problem. We see it as a resource. Our Black Soldier Fly recycling process turns organic waste into:
+            Across Somaliland, organic waste is often seen as a problem. We see it as a resource. Our Black Soldier Fly recycling process turns it into frass fertilizer and larvae protein — two useful products that go straight back into Somaliland's farms and food systems.
           </p>
         </motion.div>
-
-        {/* Product Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-3xl mx-auto">
-          {products.map((product, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: product.delay, duration: 0.6 }}
-              whileHover={{ y: -8 }}
-              className="relative"
-            >
-              <div className="h-full p-6 glass rounded-2xl hover:shadow-xl transition-all duration-300">
-                <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                  className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${product.color} flex items-center justify-center mb-4 shadow-lg`}
-                >
-                  <product.icon className="w-8 h-8 text-white" strokeWidth={2} />
-                </motion.div>
-
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                  {product.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                  {product.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
 
         {/* Beneficiaries Block */}
         <motion.div

@@ -3,19 +3,19 @@ import { motion } from 'framer-motion';
 import { Linkedin, Mail, Users } from 'lucide-react';
 
 const Team = () => {
-  // Replace with your actual team member details and image paths
+  
   const teamMembers = [
     {
       name: 'Mohamud Mohamed',
-      role: 'Founder & CEO',
+      role: 'CEO & CO-Founder  ',
       image:'/images/team/mudi.jpeg',
-      bio: 'Hamza provides executive leadership and overall direction for Planet Heart Eco. He leads strategic growth, corporate governance, high level Internal and External partnerships, guiding the company’s expansion and long-term sustainability.',
+      bio: 'Mohamud drives operational excellence, innovation pathways, and systems development. He oversees execution, performance, and the development of scalable circular-economy solutions, ensuring reliability and measurable impact.',
     },
     {
       name: 'Hamza Hussein',
-      role: 'Chief strategy Officer (CSO)',
+      role: 'Chief strategy Officer (CSO) & Founder',
       image:'/images/team/member1.jpg',
-      bio: 'Mohamud drives operational excellence, innovation pathways, and systems development. He oversees execution, performance, and the development of scalable circular-economy solutions, ensuring reliability and measurable impact.',
+      bio: 'Hamza provides executive leadership and overall direction for Planet Heart Eco. He leads strategic growth, corporate governance, high level Internal and External partnerships, guiding the company’s expansion and long-term sustainability.',
     },
     {
       name: 'Shukri Farah',

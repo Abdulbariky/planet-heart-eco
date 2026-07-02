@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
 import Logo from './Logo';
+import { contact } from '../data/siteData';
 
 const Footer = () => {
   const footerLinks = {
@@ -51,32 +52,32 @@ const Footer = () => {
 
             <div className="space-y-3">
               <a
-                href="tel:+254728200409"
+                href={contact.phoneKE.href}
                 className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                <span>0728200409</span>
+                <span>{contact.phoneKE.display}</span>
               </a>
 
               <a
-                href="tel:+252 63 9213892"
+                href={contact.phoneSL.href}
                 className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                <span>+252 63 9213892</span>
+                <span>{contact.phoneSL.display}</span>
               </a>
 
               <a
-                href="mailto:info@planethearteco.com"
+                href={contact.email.href}
                 className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                <span>info@planethearteco.com</span>
+                <span>{contact.email.display}</span>
               </a>
 
               <div className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Berbera, Somaliland</span>
+                <span>{contact.address.display}</span>
               </div>
             </div>
           </div>

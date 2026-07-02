@@ -91,7 +91,7 @@ const Hero = () => {
                   Planet Heart ECO LIMITED is Somaliland's first commercial organic waste recycling company. We turn food waste, market waste, and fish waste into organic frass fertilizer and animal feed protein using Black Soldier Fly technology.
                 </p>
                 <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl">
-                  Starting in Berbera — in official partnership with the Berbera Municipality Authority — we are building a practical waste-to-value model for the whole of Somaliland and the wider Horn of Africa.
+                  Starting in Berbera, we are building a practical waste-to-value model for the whole of Somaliland and the wider Horn of Africa.
                 </p>
                 <p className="text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-200 max-w-2xl">
                   Waste is not the end. It is the start of something valuable.

@@ -1,35 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Globe } from 'lucide-react';
+import { Send, Globe } from 'lucide-react';
 
 const CTA = () => {
-  const contactInfo = [
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '0728200409',
-      href: 'tel:+254728200409',
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+252 63 9213892',
-      href: 'tel:+252639213892',
-    },
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'info@planethearteco.com',
-      href: 'mailto:info@planethearteco.com',
-    },
-    {
-      icon: MapPin,
-      label: 'Location',
-      value: 'Berbera, Somaliland',
-      href: '#',
-    },
-  ];
-
   const collaborators = [
     'Municipalities across Somaliland that need practical organic waste solutions',
     'Farmers and agribusinesses looking for reliable organic fertilizer',
@@ -41,18 +14,11 @@ const CTA = () => {
   ];
 
   const whyWorkWithUs = [
-    'We are the first and only commercial BSF recycling company in Somaliland and the Horn of Africa',
+    'We are already producing and selling — an active circular economy business, not a pre-revenue concept',
     'We operate in official partnership with the Berbera Municipality Authority, with national expansion underway',
     'Our model is practical, proven, and built to scale across Somaliland',
     'Our team understands Somaliland\'s local market, agri-environment, and operating realities',
     'We connect waste management, agriculture, animal feed, and climate action in one integrated national system',
-  ];
-
-  const ctaButtons = [
-    { label: 'Contact Us', href: 'mailto:info@planethearteco.com', primary: true },
-    { label: 'Become a Partner', href: 'mailto:info@planethearteco.com', primary: false },
-    { label: 'Request Product Info', href: 'mailto:info@planethearteco.com', primary: false },
-    { label: 'Explore Investment', href: 'mailto:info@planethearteco.com', primary: false },
   ];
 
   return (
@@ -180,7 +146,7 @@ const CTA = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.7 }}
-              className="mb-8 border-l-4 border-white/40 pl-4"
+              className="border-l-4 border-white/40 pl-4"
             >
               <p className="text-white/90 text-sm leading-relaxed">
                 The future of waste in Somaliland is circular.<br />
@@ -188,65 +154,6 @@ const CTA = () => {
                 The future of animal feed is local.<br />
                 <span className="font-semibold text-white mt-2 block">Planet Heart ECO LIMITED is already building that future — across all of Somaliland. Come build it with us.</span>
               </p>
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.75 }}
-              className="flex flex-wrap gap-3"
-            >
-              {ctaButtons.map((btn, index) => (
-                <motion.a
-                  key={index}
-                  href={btn.href}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`px-5 py-3 rounded-xl text-sm font-semibold transition-all ${
-                    btn.primary
-                      ? 'bg-white text-primary-700 hover:bg-gray-100 shadow-lg'
-                      : 'bg-white/15 text-white hover:bg-white/25 backdrop-blur-sm border border-white/30'
-                  }`}
-                >
-                  {btn.label}
-                </motion.a>
-              ))}
-            </motion.div>
-
-            {/* Contact Information */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
-              className="mt-8 space-y-3"
-            >
-              {contactInfo.map((info, index) => (
-                <motion.a
-                  key={index}
-                  href={info.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.85 + index * 0.08 }}
-                  whileHover={{ x: 8 }}
-                  className="flex items-center gap-4 p-3 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <info.icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-medium text-white/70">
-                      {info.label}
-                    </div>
-                    <div className="text-sm font-semibold">
-                      {info.value}
-                    </div>
-                  </div>
-                </motion.a>
-              ))}
             </motion.div>
           </motion.div>
 
